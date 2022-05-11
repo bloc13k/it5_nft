@@ -71,7 +71,7 @@ return (
   { nfts && nfts.length > 0 ? (
   nfts.map((nft, index) => (
   
-    <tr data-index={index}>
+    <tr key={nft} data-index={index}>
         <td>{nft.name}</td>
         <td>{nft.tokenId}</td>
         <td>{nft.image}</td>

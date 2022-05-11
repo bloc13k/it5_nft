@@ -6,6 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "lint": "next lint",
     "export": "next export",
     "deploy": "npm run build && npm run export"
   },
@@ -13,7 +14,6 @@
     "axios": "^0.21.1",
     "ethers": "^5.0.0",
     "formik": "^2.2.9",
-    "ipfs-http-client": "^56.0.3",
     "next": "11.0.1",
     "react": "17.0.2",
     "react-dom": "17.0.2",
