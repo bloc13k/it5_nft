@@ -29,18 +29,15 @@ export default function AboutPage() {
     const items = await Promise.all(
       data.map( async i => {
           const tokenURI = await contract2.tokenURI(i.tokenId);
-          //
-          const meta = await axios.get('https://ipfs.io/ipfs/QmaZzkkvffczJmbB6h3Dd5Ui7LUQDZyNM3Xw26MppjE4HF?filename=uri.json');
-          //let price = ethers.utils.formatEther(BigNumber.toString(i.price) );
-          // nft
+          //const meta = await axios.get('https://ipfs.io/ipfs/QmaZzkkvffczJmbB6h3Dd5Ui7LUQDZyNM3Xw26MppjE4HF?filename=uri.json');
           let item = {
             price : ethers.utils.formatEther(i.price),
             tokenId: i.tokenId.toNumber(),
             seller: i.seller,
             owner: i.owner,
-            image: meta.data.image,
-            name: meta.data.name,
-            description: meta.data.description,
+            image: 'https://ipfs.io/ipfs/QmPCPxiuRf83kC5gugywcv9iZmW1JzAhzNZK4m8R7yvknZ?filename=it5.jpg',
+            name: 'IT5',
+            description: 'IT5 Item',
           };
           return item;
         })
@@ -59,29 +56,30 @@ return (
       <h1 className="text-4xl font-semibold text-center ">
         My <span className="text-primary">NTFs</span>
       </h1>
-  <table className="table table-bordered">
-  <tr>
-      <th>name</th>
-      <th>tokenId</th>
-      <th>image</th>
-      <th>price</th>
+      <div>
+        <table className="table table-bordered">
+          <tbody>
+            <tr>
+              <th>name</th>
+              <th>tokenId</th>
+              <th>price</th>
+            </tr>
   
-  </tr>
-  
-  { nfts && nfts.length > 0 ? (
-  nfts.map((nft, index) => (
-  
-    <tr key={nft} data-index={index}>
-        <td>{nft.name}</td>
-        <td>{nft.tokenId}</td>
-        <td>{nft.image}</td>
-        <td>{nft.price} IT5</td>
-      </tr>
-      )
-      )
-      ) : (<div>You don&apos;t have a NFT yet</div>)
-    }
-    </table>
+            { nfts && nfts.length > 0 ? (
+             nfts.map((nft, index) => (
+    
+             <tr key={index} data-index={index}>
+              <td>{nft.name}</td>
+              <td>{nft.tokenId}</td>
+              <td>{nft.price} IT5</td>
+            </tr>
+             )
+              )
+                ) : (null)
+                  }
+          </tbody>
+        </table>
+    </div>
     </div>
   );
 }

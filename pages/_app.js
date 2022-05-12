@@ -6,7 +6,6 @@ function MyApp({ Component, pageProps }) {
     <div>
       <nav className="border-b p-6">
         <p className="text-4xl font-bold text-indigo-400">TokenStack</p>
-        <div className="flex mt-4">
           <Link href="/">
             <a className="mr-6 text-pink-500">
               Home
@@ -27,7 +26,6 @@ function MyApp({ Component, pageProps }) {
               Creator Dashboard
             </a>
           </Link>
-        </div>
       </nav>
       <Component {...pageProps} />
     </div>

@@ -2,12 +2,10 @@ import NFT from "./ABIS/nft.json";
 import { ethers } from "ethers";
 import Web3Modal from "web3modal";
 import { nftAddress } from "../config";
-import { create } from "ipfs-http-client";
 
 
 export default function AboutPage() {
 
-    const client = create({ url: "https://rinkeby.infura.io/v3/4dea3112b0e642a5ab5e1d3fa407e4f2" });
 
 
     const mintInit = async () => {
